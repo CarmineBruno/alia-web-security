@@ -1,9 +1,18 @@
 import { createServer, startServer } from '#shared';
 import { readFile } from 'fs/promises';
-
 import db from './database.js';
+// import cookieParser from 'cookie-parser';
+// import crypto from 'crypto';
+
+// const cookieSecret = 'super-secret';
 
 const app = createServer({ cookies: false });
+// app.use(cookieParser());
+// app.use(cookieParser(cookieSecret));
+
+// const generateSessionId = () => {
+//   return crypto.randomBytes(16).toString('hex');
+// };
 
 app.get('/', (req, res) => {
   if (!req.cookies) res.send('Cookies are disabled.');
@@ -18,6 +27,7 @@ app.get('/login', async (req, res) => {
   const loginPage = await readFile('./pages/login.html', 'utf-8');
 
   if (req.cookies.username) {
+    // if (req.signedCookies.username) {
     res.redirect('/profile');
   }
 
@@ -41,7 +51,24 @@ app.post('/login', async (req, res) => {
   );
 
   if (user) {
-    res.cookie('username', username);
+    // const sessionId = generateSessionId();
+    // await db.run('INSERT INTO sessions (id, username) VALUES (?, ?)', [
+    //   sessionId,
+    //   username,
+    // ]);
+
+    // res.cookie('sessionId', sessionId, {
+    //   httpOnly: true,
+    //   secure: process.env.NODE_ENV === 'production',
+    //   signed: true,
+    // });
+
+    res.cookie('username', username, {
+      // httpOnly: true,
+      // secure: process.env.NODE_ENV === 'production',
+      // signed: true,
+    });
+
     res.redirect('/profile');
   } else {
     res.status(403).redirect('/login?error=Invalid login credentials.');
@@ -58,11 +85,23 @@ app.get('/profile', async (req, res) => {
   res.locals.title = 'Profile';
 
   const username = req.cookies.username;
+  // const username = req.signedCookies.username;
+  // const sessionId = req.signedCookies.sessionId;
 
   if (!username) {
+    // if (!sessionId) {
     return res.redirect('/login?error=Please login to view your profile.');
   }
 
+  // const session = await db.get(
+  //   'SELECT * FROM sessions WHERE id = ?',
+  //   sessionId
+  // );
+
+  // const user = await db.get(
+  //   'SELECT * FROM users WHERE username = ?',
+  //   session.username
+  // );
   const user = await db.get('SELECT * FROM users WHERE username = ?', username);
 
   if (user && user.username) {
