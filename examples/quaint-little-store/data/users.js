@@ -15,15 +15,6 @@
  */
 const users = [
   {
-    name: 'Bobby Tables',
-    email: 'bobby@tables.com',
-    password: 'password123',
-    admin: false,
-    creditCard: '3615-500732-9915',
-    cvv: '994',
-    expirationDate: '05/2025',
-  },
-  {
     name: 'Laurie Mante',
     email: 'admin@example.com',
     password: 'password564',
@@ -31,6 +22,15 @@ const users = [
     creditCard: '3748-933522-84323',
     cvv: '564',
     expirationDate: '12/2024',
+  },
+  {
+    name: 'Bobby Tables',
+    email: 'bobby@tables.com',
+    password: 'password123',
+    admin: false,
+    creditCard: '3615-500732-9915',
+    cvv: '994',
+    expirationDate: '05/2025',
   },
   {
     name: 'Wilford Wilkinson',
