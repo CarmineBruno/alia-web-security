@@ -12,4 +12,8 @@ form.addEventListener('submit', (event) => {
   const message = messageInput.value;
 
   iframe.contentWindow?.postMessage({ participant, message }, '*');
+  // iframe.contentWindow?.postMessage(
+  //   { participant, message },
+  //   'http://localhost:4108'
+  // );
 });
