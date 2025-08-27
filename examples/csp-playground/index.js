@@ -1,10 +1,44 @@
 import { createServer, startServer } from '#shared';
-
+// import helmet from 'helmet';
 import { db } from './database.js';
 
 const app = createServer({
   log: true,
 });
+
+// app.use(helmet());
+
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       scriptSrc: [
+//         "'self'",
+//         // "'unsafe-inline'"
+//       ],
+//       // styleSrc: [
+//       //   "'self'",
+//       //   // "'unsafe-inline",
+//       //   'https://fonts.googleapis.com',
+//       //   'https://cdn.jsdelivr.net',
+//       //   'https://jsdelivr.com',
+//       // ],
+//       imgSrc: [
+//         "'self'",
+//         'https://static.frontendmasters.com',
+//         'https://fav.farm',
+//       ],
+//       fontSrc: [
+//         "'self'",
+//         'https://fonts.googleapis.com',
+//         'https://fonts.gstatic.com',
+//       ],
+//       connectSrc: ["'self'"],
+//       objectSrc: ["'none'"],
+//       upgradeInsecureRequest: [],
+//     },
+//   })
+// );
 
 app.get('/', (req, res) => {
   res.render('index', { title: 'Content Security Policy' });
