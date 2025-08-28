@@ -1,0 +1,29 @@
+<%- include("header.ejs") %>
+
+    <h1>Reviews</h1>
+
+    <p class="center mt-5">Here are the latest restaurant reviews.</p>
+
+    <div class="row mt-5">
+        <div class="col-8 offset-2">
+            <% for(review of reviews) {%>
+                <div class="card ml-5 mr-5 my-2">
+                    <div class="card-body">
+                        <%- sanitizeHtml(review.review) %>
+                            <br>
+                            <span class="reviewname">
+                                <%= review.name %>
+                            </span>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+
+
+    <div class="center mt-5">
+        <a href="/add" class="btn btn-primary">Add review</a>
+    </div>
+
+
+    <%- include("./footer.ejs") %>
