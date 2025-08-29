@@ -1,0 +1,11 @@
+{
+  "files": [],
+  "references": [
+    // Use this file to handle settings that are unique to the application's source code
+    { "path": "./tsconfig.app.json" },
+
+    // This file is used only for TypeScript used for Node.js environments such as server-side code, build scripts,
+    // or any part of the project that runs in a Node.js context.
+    { "path": "./tsconfig.node.json" }
+  ]
+}

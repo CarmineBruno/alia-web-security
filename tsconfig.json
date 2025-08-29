@@ -16,6 +16,11 @@
       "#shared/*": ["./shared/*"]
     }
   },
-  "include": ["shared/**/*.js", "examples/**/*.ts", "examples/**/*.js"],
+  "include": [
+    "shared/**/*.js",
+    "examples/**/*.ts",
+    "examples/**/*.js",
+    "examples/xss-react-escapehatches/src/App.jsx"
+  ],
   "exclude": ["node_modules", "dist"]
 }

@@ -7,7 +7,7 @@ import { hideBin } from 'yargs/helpers';
 import spawn from 'cross-spawn';
 
 const { sql, port } = yargs(hideBin(process.argv)).argv;
-const reactFiles = await fg.glob('examples/*/src/index.js');
+const reactFiles = await fg.glob('examples/*/src/App.tsx');
 const files = await fg.glob('examples/*/index.js');
 const projects = [...files, ...reactFiles]
   .map((file) => file.split('/')[1])
@@ -36,8 +36,11 @@ const cwd = `examples/${project}`;
 
 console.log('👉', chalk.bgGreen.black('Selected'), cwd + '/index.js');
 
+const selectedPort =
+  port || process.env.PORT || `40${String(choice.project).padStart(2, '0')}`;
+
 if (project.includes('react')) {
-  spawn.sync('npm', ['start'], {
+  spawn.sync('npm', ['run', 'dev', '--', '--port', selectedPort], {
     stdio: 'inherit',
     cwd: cwd,
   });
@@ -49,10 +52,7 @@ if (project.includes('react')) {
     ext: 'js,json',
     ignore: ['node_modules', '.git'],
     env: {
-      PORT:
-        port ||
-        process.env.PORT ||
-        `40${String(choice.project).padStart(2, '0')}`,
+      PORT: selectedPort,
       NODE_ENV: 'development',
       BASE: cwd,
       SHOW_SQL: sql ? true : false,
