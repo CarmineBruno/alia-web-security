@@ -7,7 +7,9 @@
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "declaration": true,
+    "allowImportingTsExtensions": true,
     "noEmit": true,
     "checkJs": true,
     "strict": true,
@@ -20,7 +22,7 @@
     "shared/**/*.js",
     "examples/**/*.ts",
     "examples/**/*.js",
-    "examples/xss-react-escapehatches/src/App.jsx"
+    "examples/**/src/*.*sx"
   ],
   "exclude": ["node_modules", "dist"]
 }
