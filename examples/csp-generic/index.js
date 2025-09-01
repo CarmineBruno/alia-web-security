@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
  *********************************/
 
 app.get('/xss', (req, res) => {
-  res.setHeader('Content-Security-Policy', "script-src 'self'");
+  // res.setHeader('Content-Security-Policy', "script-src 'self'");
   const filePath = join(VIEWS, 'xss.html');
   res.sendFile(filePath);
 });
@@ -29,7 +29,7 @@ app.get('/xss', (req, res) => {
  *******************************/
 
 app.get('/hashes', (req, res) => {
-  res.setHeader('Content-Security-Policy', "script-src 'self'");
+  // res.setHeader('Content-Security-Policy', "script-src 'self'");
   const filePath = join(VIEWS, 'hashes.html');
   res.sendFile(filePath);
 });
