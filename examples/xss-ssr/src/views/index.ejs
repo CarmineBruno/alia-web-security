@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>React SSR Playground</title>
+</head>
+<body>
+<div id="root"><%- reactApp %></div>
+<script src="/vendor.js" nonce="<%- nonce %>" charset="utf-8"></script>
+<script src="/<%- name %>.js" nonce="<%- nonce %>" charset="utf-8"></script>
+</body>
+</html>

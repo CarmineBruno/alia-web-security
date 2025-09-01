@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>React SSR Playground</title>
+</head>
+<body>
+<h1>The message</h1>
+<div id="msg">Placeholder text</div>
+<script>
+    let dataFromJsonAPI;
+    if(typeof window !== "undefined") {
+        // dataFromJsonAPI= "Philippe<img src='none.png' onerror='alert(1)'>";
+    }
+    else {
+        dataFromJsonAPI = "<%- data %>";
+        document.getElementById("msg").innerText = dataFromJsonAPI;
+    }
+
+    
+</script>
+</body>
+</html>
