@@ -9,7 +9,7 @@
             <% for(review of reviews) {%>
                 <div class="card ml-5 mr-5 my-2">
                     <div class="card-body">
-                        <%- sanitizeHtml(review.review) %>
+                        <%- review.review %>
                             <br>
                             <span class="reviewname">
                                 <%= review.name %>
