@@ -1,0 +1,1 @@
+console.log("Evil script is loading ...");

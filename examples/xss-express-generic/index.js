@@ -29,4 +29,4 @@ app.post('/add', (req, res) => {
   res.redirect('/');
 });
 
-startServer(app, { name: 'XSS' });
+startServer(app, { name: 'XSS-Generic' });

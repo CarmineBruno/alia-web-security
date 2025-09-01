@@ -1,0 +1,1 @@
+console.log("Legitimate script is loading ...");
