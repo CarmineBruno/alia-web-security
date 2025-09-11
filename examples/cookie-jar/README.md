@@ -4,12 +4,12 @@ This application is susceptible to multiple cookie-related vulnerabilities, incl
 
 There are two users loaded into the database for starters.
 
-| username | password      |
-| -------- | ------------- |
-| pippo    | rebeccapurple |
-| admin    | raspberry     |
+| username | password  |
+| -------- | --------- |
+| obiwan   | blueblade |
+| admin    | raspberry |
 
-We're going to start our journey as `bobbytables`.
+We're going to start our journey as `obiwan`.
 
 ### How the Attack Works
 
