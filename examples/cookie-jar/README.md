@@ -4,10 +4,10 @@ This application is susceptible to multiple cookie-related vulnerabilities, incl
 
 There are two users loaded into the database for starters.
 
-| username    | password       |
-| ----------- | -------------- |
-| bobbytables | papayawhip     |
-| admin       | blanchedalmond |
+| username | password      |
+| -------- | ------------- |
+| pippo    | rebeccapurple |
+| admin    | raspberry     |
 
 We're going to start our journey as `bobbytables`.
 

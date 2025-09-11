@@ -1,14 +1,13 @@
 import { createServer, startServer } from '#shared';
 import { readFile } from 'fs/promises';
 import db from './database.js';
-// import cookieParser from 'cookie-parser';
+import cookieParser from 'cookie-parser';
 // import crypto from 'crypto';
 
 // const cookieSecret = 'super-secret';
 
 const app = createServer({ cookies: false });
-// app.use(cookieParser());
-// app.use(cookieParser(cookieSecret));
+app.use(cookieParser());
 
 // const generateSessionId = () => {
 //   return crypto.randomBytes(16).toString('hex');
@@ -27,7 +26,6 @@ app.get('/login', async (req, res) => {
   const loginPage = await readFile('./pages/login.html', 'utf-8');
 
   if (req.cookies.username) {
-    // if (req.signedCookies.username) {
     res.redirect('/profile');
   }
 
@@ -85,7 +83,6 @@ app.get('/profile', async (req, res) => {
   res.locals.title = 'Profile';
 
   const username = req.cookies.username;
-  // const username = req.signedCookies.username;
   // const sessionId = req.signedCookies.sessionId;
 
   if (!username) {
