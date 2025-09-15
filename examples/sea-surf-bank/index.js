@@ -35,7 +35,7 @@ app.get('/account', async (req, res) => {
     title: 'Sea Surf Bank',
     friends,
     message,
-    //  token
+    // token
   });
 });
 

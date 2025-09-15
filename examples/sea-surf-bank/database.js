@@ -1,10 +1,10 @@
 import { db, toParamsAndValues } from '#shared/database.js';
 
 const users = [
-  { id: 1, username: 'finnthehuman', password: 'adventure', balance: 1000 },
-  { id: 2, username: 'jake', password: 'dog', balance: 500 },
-  { id: 3, username: 'bmo', password: 'robot', balance: 200 },
-  { id: 4, username: 'princessbubblegum', password: 'candy', balance: 100 },
+  { id: 1, username: 'therealneo', password: 'redpill', balance: 1000 },
+  { id: 2, username: 'trinity', password: 'midnightblue', balance: 500 },
+  { id: 3, username: 'morpheus', password: 'electricviolet', balance: 200 },
+  { id: 4, username: 'smith', password: 'smokyblack', balance: 100 },
 ];
 
 const { params, values } = toParamsAndValues(users, true);
