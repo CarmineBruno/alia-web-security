@@ -1,7 +1,5 @@
 import { startServer, createServer } from '#shared';
-
 import { db } from './database.js';
-
 import {
   authenticate,
   currentUser,
@@ -85,8 +83,7 @@ app.post('/login', async (req, res) => {
 
   res.cookie(
     'sessionId',
-    user.id
-    // sessionId
+    user.id // sessionId
   );
   res.redirect('/');
 });
