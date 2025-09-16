@@ -18,7 +18,8 @@ function App() {
     console.log(`Rendering data in the div: ${currentValue}`);
     setData(currentValue);
 
-    divRender2.current.innerHTML = currentValue;
+    // divRender2.current.innerHTML = currentValue;
+    divRender2.current.innerHTML = DOMPurify.sanitize(currentValue);
   }
 
   return (
