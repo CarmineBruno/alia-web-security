@@ -37,6 +37,7 @@
           <!-- Comments rendered server-side -->
           <% for(comment of comments) {%>
             <div class="comment"><%- comment.content %></div>
+            <!-- <div class="comment"><%- sanitizeHtml(comment.content) %></div> -->
             <% } %>
 
         </div>

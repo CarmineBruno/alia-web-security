@@ -1,16 +1,14 @@
 import { readFile } from 'fs/promises';
 import { startServer, createServer } from '#shared';
-import { sanitize } from './sanitize.js';
-
+// import sanitize from 'sanitize-html';
 import db from './database.js';
-
-const threats = await readFile('./threats.txt', 'utf-8');
 
 const app = createServer();
 
 const getComments = async () => {
   return db.all('SELECT content FROM comments');
-  // const comments = threats.split('\n').map((content) => ({ content }));
+
+  // const comments = await db.all('SELECT content FROM comments');
 
   // comments.forEach((comment) => {
   //   comment.content = sanitize(comment.content);
@@ -22,7 +20,11 @@ const getComments = async () => {
 app.get('/', async (req, res) => {
   const comments = await getComments();
 
-  res.render('index', { comments, query: req.query });
+  res.render('index', {
+    comments,
+    query: req.query,
+    // sanitizeHtml: sanitize
+  });
 });
 
 app.get('/comments', async (req, res) => {
