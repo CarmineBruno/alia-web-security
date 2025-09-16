@@ -1,17 +1,17 @@
 // @ts-nocheck
 import React, { useState, useReducer, useContext } from 'react';
-// import DOMPurify from 'dompurify';
+import DOMPurify from 'dompurify';
 import './App.css';
-// import SafeHtml from './SafeHtml';
+import SafeHtml from './SafeHtml.tsx';
 
 const ProfileContext = React.createContext(null);
 
 function App() {
   const emptyProfile = {
     editing: false,
-    name: 'Philippe De Ryck',
+    name: 'Random Developer',
     bio: 'Teaching web security!',
-    web: 'https://pragmaticwebsecurity.com',
+    web: 'https://owasp.org/www-project-top-ten/',
     video: 'https://www.youtube-nocookie.com/embed/NPgVh5ozuZE',
   };
 
@@ -70,8 +70,10 @@ function ProfileDisplay({ profile }) {
       <p>{profile.name}</p>
 
       <h3>Bio</h3>
-      <p>{profile.bio}</p>
-
+      {/* <p
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(profile.bio) }}
+      ></p> */}
+      <SafeHtml element="p" html={profile.bio}></SafeHtml>
       <h3>Website</h3>
       <a href={profile.web}>Open web page</a>
 
