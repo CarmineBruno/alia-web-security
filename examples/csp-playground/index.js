@@ -7,35 +7,22 @@ const app = createServer({
 });
 
 // app.use(helmet());
-
 // app.use(
 //   helmet.contentSecurityPolicy({
 //     directives: {
 //       defaultSrc: ["'self'"],
-//       scriptSrc: [
+//       styleSrc: [
 //         "'self'",
-//         // "'unsafe-inline'"
+//         'https://cdn.jsdelivr.net',
+//         'https://fonts.googleapis.com',
+//         "'unsafe-inline'",
 //       ],
-//       // styleSrc: [
-//       //   "'self'",
-//       //   // "'unsafe-inline",
-//       //   'https://fonts.googleapis.com',
-//       //   'https://cdn.jsdelivr.net',
-//       //   'https://jsdelivr.com',
-//       // ],
 //       imgSrc: [
 //         "'self'",
-//         'https://static.frontendmasters.com',
+//         'https://owasp.org/assets/images/logo.png',
 //         'https://fav.farm',
 //       ],
-//       fontSrc: [
-//         "'self'",
-//         'https://fonts.googleapis.com',
-//         'https://fonts.gstatic.com',
-//       ],
-//       connectSrc: ["'self'"],
-//       objectSrc: ["'none'"],
-//       upgradeInsecureRequest: [],
+//       scriptSrc: ["'self'"],
 //     },
 //   })
 // );
