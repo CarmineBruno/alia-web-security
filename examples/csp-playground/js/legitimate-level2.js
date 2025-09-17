@@ -1,0 +1,1 @@
+console.log("This is a script loaded by another script ...");
