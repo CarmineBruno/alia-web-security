@@ -1,13 +1,13 @@
 import { createServer, startServer } from '#shared';
 import { readFile } from 'fs/promises';
 import db from './database.js';
-import cookieParser from 'cookie-parser';
+// import cookieParser from 'cookie-parser';
 // import crypto from 'crypto';
 
 // const cookieSecret = 'super-secret';
 
 const app = createServer({ cookies: false });
-app.use(cookieParser());
+// app.use(cookieParser());
 
 // const generateSessionId = () => {
 //   return crypto.randomBytes(16).toString('hex');

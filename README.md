@@ -1,6 +1,6 @@
-# Web Security
+# Secure Coding
 
-Examples and exercises for [the Web Security course for Frontend Masters](https://frontendmasters.com/courses/web-security-v2/).
+Examples and exercises for Alia Secure Coding.
 
 ## Running the exercises:
 

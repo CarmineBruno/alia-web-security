@@ -20,7 +20,7 @@ SQL Injection is a (web) security vulnerability that allows an attacker to inter
 For example, if we log in using the password `' OR 1=1--`, our malicious password will create the following SQL query:
 
 ```sql
-SELECT * FROM users WHERE email = 'robert.d.tables@frontendmasters.com' AND password = '' OR 1=1--'
+SELECT * FROM users WHERE email = 'example@email.com' AND password = '' OR 1=1--'
 ```
 
 In this case `1` does, in fact, equal `1`, which means that query was successful and the user was successfully returned. For this _particular_ vulnerability, this _particularly_ bad because from this point forward, we've set a session token that will allow us to move around the site as that user.
