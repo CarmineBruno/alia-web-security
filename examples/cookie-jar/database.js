@@ -3,7 +3,8 @@ import { db } from '#shared/database.js';
 import { toValues } from '#shared';
 
 const users = toValues([
-  { username: 'pippo', password: 'rebeccapurple' },
+  { username: 'rick', password: 'acidgreen' },
+  { username: 'morty', password: 'rebeccapurple' },
   { username: 'admin', password: 'raspberry' },
 ]);
 
