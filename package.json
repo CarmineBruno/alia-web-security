@@ -1,7 +1,7 @@
 {
   "name": "web-security",
   "version": "1.0.0",
-  "description": "Examples and exercises for the Web Security course for Frontend Masters.",
+  "description": "Examples and exercises for the Web Security course.",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -13,18 +13,6 @@
     "#shared": "./shared/index.js",
     "#shared/*": "./shared/*"
   },
-  "homepage": "https://frontendmasters.com/courses/web-security-v2/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stevekinney/web-security.git"
-  },
-  "keywords": [
-    "frontendmasters",
-    "web security",
-    "security"
-  ],
-  "author": "Steve Kinney <hello@stevekinney.net> (https://stevekinney.net)",
-  "license": "MIT",
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.2",
     "bcrypt": "^5.1.1",
