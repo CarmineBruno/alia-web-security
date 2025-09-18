@@ -6,9 +6,7 @@ const messages = document.getElementById('messages') as HTMLDivElement;
 localStorage.setItem('secret-storage', "It's a secret to everybody.");
 
 window.addEventListener('message', (event) => {
-  // if (event.origin !== 'http://localhost:4108') return;
-
-  console.log(event);
+  // if (event.origin !== 'http://localhost:4111') return;
   addMessage(event.data.message, event.data.participant);
 });
 
